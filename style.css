@@ -1,0 +1,59 @@
+body { margin: 0; padding: 0; font-family: 'Inter', -apple-system, sans-serif; background: #0b151f; }
+#map { width: 100vw; height: 100vh; }
+
+#dashboard-panel {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    right: 20px;
+    background: #11253a;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.panel-header { 
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px; 
+    color: #00d1d1; 
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.radio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    font-size: 11px;
+}
+
+#layer-selector-group { flex: 2; }
+#time-control-group { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; margin-top: 10px; }
+input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #334e68; border-radius: 2px; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #00d1d1; cursor: pointer; margin-top: -6px; }
+
+.popup-div {
+    padding: 6px 10px;
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.2); 
+    border-radius: 4px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    backdrop-filter: blur(2px);
+}
+
+.maplibregl-popup-content { padding: 0 !important; background: transparent !important; border: none !important; box-shadow: none !important; }
+.maplibregl-popup-tip { display: true !important; } /* FIXED: Corrected from 'display: true' */
+
+.custom-radio { display: flex; align-items: center; cursor: pointer; font-size: 12px; margin-bottom: 8px; }
+.custom-radio input { position: absolute; opacity: 0; cursor: pointer; }
+.checkmark { height: 12px; width: 12px; background-color: #334e68; border-radius: 50%; margin-right: 10px; transition: 0.2s; }
+.custom-radio:hover input ~ .checkmark { background-color: #4a6c8e; }
+.custom-radio input:checked ~ .checkmark { background-color: #00d1d1; box-shadow: 0 0 5px #00d1d1; }

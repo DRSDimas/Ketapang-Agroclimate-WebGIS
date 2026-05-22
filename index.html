@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketapang Agroclimatic Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" />
+    <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/@turf/turf@7.3.4/turf.min.js"></script>
+    <script src="https://unpkg.com/@openmeteo/weather-map-layer@0.0.19/dist/index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="map"></div>
+
+    <div id="dashboard-panel">
+        <div id="layer-selector-group">
+            <div class="panel-header">KETAPANG REGENCY AGROCLIMATIC DATA</div>
+            <div class="radio-grid">
+                <label class="custom-radio"><input type="radio" name="layer" value="soil_moisture_0_to_1cm" checked><span class="checkmark"></span>Surface Soil Moisture (0-1cm)</label>
+                <label class="custom-radio"><input type="radio" name="layer" value="soil_moisture_9_to_27cm"><span class="checkmark"></span>Deep Soil Moisture (9-27cm)</label>
+                <label class="custom-radio"><input type="radio" name="layer" value="soil_temperature_18cm"><span class="checkmark"></span>Deep Soil Temperature (18cm)</label>
+                <label class="custom-radio"><input type="radio" name="layer" value="temperature_2m"><span class="checkmark"></span>Air Temperature (2m)</label>
+                <label class="custom-radio"><input type="radio" name="layer" value="precipitation"><span class="checkmark"></span>Precipitation (mm)</label>
+                <label class="custom-radio"><input type="radio" name="layer" value="direct_radiation"><span class="checkmark"></span>Direct Solar Radiation</label>
+                <label class="custom-radio"><input type="radio" name="layer" value="relative_humidity_2m"><span class="checkmark"></span>Relative Humidity (2m)</label>
+                <label class="custom-radio"><input type="radio" name="layer" value="wind_u_component_10m"><span class="checkmark"></span>Wind U-Component (10m)</label>
+            </div>
+        </div>
+        
+        <div id="time-control-group">
+            <label for="time-slider"><strong>FORECAST:</strong> <span id="time-display">+0 hours</span></label>
+            <input type="range" id="time-slider" min="0" max="72" value="0" step="1">
+        </div>
+    </div>
+</body>
+</html>
